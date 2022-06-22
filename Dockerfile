@@ -1,3 +1,5 @@
 FROM python:3.9-alpine
-RUN python -m pip install kubernetes==22.6.0
+COPY requirements.txt /
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
 ENTRYPOINT ["python"]
